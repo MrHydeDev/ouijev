@@ -1,0 +1,383 @@
+# WHO
+Tu sombra
+Tu reflejo
+Tu madre
+Tu padre
+Tu abuela
+Tu abuelo
+Tu hermano
+Tu hermana
+Tu cuñado
+Tu suegra
+Tu ex
+Tu jefe
+Tu vecino
+Tu vecina
+Tu mejor amigo
+Tu mejor amiga
+Tu gato
+Tu perro
+Tu otro yo
+Tu doble
+Tu conciencia
+Tu pasado
+Tu miedo
+Tu enemigo
+Tu amor
+Tu primer amor
+Tu sangre
+Alguien cercano
+Alguien que conoces
+Alguien de fuera
+Alguien celoso
+Un desconocido
+Una desconocida
+Un viejo amigo
+Quien menos esperas
+Quien te quiere
+Quien te odia
+Nadie
+Nadie vivo
+Todos
+Casi todos
+Ellos
+Nosotros
+Yo
+Otro como yo
+Los muertos
+Los de antes
+Los que se fueron
+Los vecinos
+La familia
+Un niño
+Una niña
+Una mujer
+Un hombre
+Una anciana
+Un anciano
+El que calla
+La que calla
+El que vigila
+El que espera
+El de arriba
+El del sótano
+La del tercero
+El cartero
+El portero
+Un fantasma
+Una sombra
+Un espíritu
+Un ángel
+El diablo
+La muerte
+El destino
+
+# WHERE
+Detrás de ti
+A tu lado
+Encima de ti
+Debajo de la cama
+Bajo el sofá
+Entre los cojines
+En el desván
+En el sótano
+En la cocina
+En el armario
+En el trastero
+En el pasillo
+En la escalera
+En el baño
+En la entrada
+En la puerta
+Tras la puerta
+En la ventana
+En tu cama
+En tu bolsillo
+En el abrigo
+En la chaqueta
+En la maleta
+En el coche
+En la nevera
+En el cajón
+Donde lo dejaste
+Donde siempre
+Donde no miras
+Aquí
+Ahí
+Allí
+Cerca
+Muy cerca
+Lejos
+Muy lejos
+En ninguna parte
+En todas partes
+Al otro lado
+En el espejo
+En la pared
+En el tejado
+En el jardín
+En el bosque
+En el pozo
+En el agua
+En el mar
+Bajo tierra
+En el cementerio
+En la iglesia
+En tu cabeza
+En tus sueños
+En la oscuridad
+Al fondo
+Arriba
+Abajo
+Fuera
+Dentro
+En casa
+Contigo
+En el cielo
+En el infierno
+En otra vida
+
+# WHEN
+Pronto
+Muy pronto
+Dentro de poco
+Más pronto que tarde
+Ya
+Ahora
+Ahora mismo
+Hoy
+Esta noche
+Mañana
+Pasado mañana
+A medianoche
+A las tres
+Al amanecer
+Al anochecer
+Con la luna llena
+El lunes
+El viernes
+El domingo
+En invierno
+En primavera
+En verano
+En otoño
+En siete días
+En un año
+En diez años
+El año que viene
+Otro día
+Más tarde
+Tarde
+Demasiado tarde
+Todavía no
+Aún no
+Cuando duermas
+Cuando llueva
+Cuando no mires
+Cuando no lo esperes
+Cuando estés solo
+Cuando estés sola
+De viejo
+De vieja
+A su debido tiempo
+Ayer
+Hace poco
+Hace mucho
+Siempre
+Nunca
+Nunca jamás
+
+# WHY_HOW
+Porque sí
+Porque no
+Por miedo
+Por amor
+Por culpa
+Por ti
+Por algo será
+Por lo que hiciste
+Por lo que viste
+Sin razón
+Tu conciencia
+Tus pecados
+Los nervios
+El café
+Demasiado móvil
+Algo que callas
+Una deuda
+Un ruido
+Yo
+Despacio
+De repente
+En silencio
+Sin dolor
+Con dolor
+Sin darte cuenta
+Dormido
+Dormida
+Riéndote
+Llorando
+Solo
+Sola
+Acompañado
+Acompañada
+Tranquilo
+Tranquila
+De un susto
+De un disgusto
+De amor
+De pena
+De risa
+En tu cama
+Con los tuyos
+Como todos
+Como tu abuelo
+Mal
+
+# WHAT
+Huye
+Corre
+Escapa
+No mires
+No mires atrás
+Calla
+Escucha
+Duerme
+Despierta
+Cuidado
+Algo llega
+Viene a por ti
+Ya está aquí
+No estás solo
+No estás sola
+Te observan
+Te esperan
+No salgas
+Cierra la puerta
+Apaga la luz
+Enciende la luz
+Reza
+Olvídalo
+Déjalo ir
+Perdona
+Vuelve
+Vete
+Quédate
+Espera
+Sé valiente
+Ten miedo
+No tengas miedo
+Confía
+No confíes
+Ámalo
+Ámala
+Díselo
+Pídele perdón
+Vive
+Lucha
+Sigue
+Para
+Cambia
+Vuelve a empezar
+Cambios
+Un viaje
+Una carta
+Una llamada
+Una visita
+Dinero
+Amor
+Desamor
+Lágrimas
+Suerte
+Mala suerte
+Una boda
+Un funeral
+Una sorpresa
+Un secreto
+Nada bueno
+Nada malo
+Lo de siempre
+Todo irá bien
+Todo se acaba
+El fin
+Un principio
+Otra vida
+El vacío
+La nada
+La niebla
+Un sueño
+Una puerta
+Un camino
+Dos caminos
+Silencio
+Oscuridad
+Luz
+Frío
+Calor
+Fuego
+Tierra
+Sangre
+Cenizas
+Polvo
+Paz
+Calma
+Tormenta
+Descanso
+Olvido
+Castigo
+Justicia
+Venganza
+La verdad
+Tu alma
+Tu tiempo
+Tu nombre
+Tu voz
+Tus secretos
+A ti
+Compañía
+Salir
+Volver
+Jugar
+Hablar
+Descansar
+Recordar
+Olvidar
+Que te quedes
+Que te vayas
+Que me escuches
+Que me recuerdes
+Una disculpa
+Una oración
+Una vela
+Un cuerpo
+Un nombre
+Una caja
+Un baúl
+Una muñeca
+Un espejo
+Un espejo roto
+Cartas
+Fotos viejas
+Un reloj
+Una llave
+Unas llaves
+Un anillo
+Huesos
+Ratones
+Arañas
+Recuerdos
+Un vestido
+Un diario
+Una cuna
+Una mecedora
+Juguetes
+Un retrato
+Un libro
+Una tumba
+Una cruz
+Un número
+Una fecha
+Humo
+Agua
+Sal
+Flores secas

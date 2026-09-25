@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A pixel-art Ouija board possessed by Jev, an AI model that can't write." />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b0c0f" />
+    <title>Ouijev</title>
+    <!-- Picks the language before the first paint; js/main.js then puts the texts below into it -->
+    <script src="js/language.js"></script>
+    <!-- js/main.js paints the favicon using the planchette itself -->
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <canvas id="fog" aria-hidden="true"></canvas>
+    <!-- Links, so the switch also works before (or without) the modules and can open a language in a new tab -->
+    <div id="language" role="group" aria-label="Language">
+      <a href="?lang=en" hreflang="en" lang="en" aria-current="page">EN</a>
+      <a href="?lang=es" hreflang="es" lang="es">ES</a>
+    </div>
+    <main>
+      <h1 class="visually-hidden">Ouijev, a Ouija board answered by Jev</h1>
+      <canvas id="board" role="img" aria-label="Ouija board with a planchette"></canvas>
+      <section id="seance" aria-label="Seance">
+        <a class="author" href="https://mrhyde.dev" rel="me" aria-label="MrHydeDev, mrhyde.dev">
+          <img class="author__photo" src="avatar_220.jpg" alt="" width="110" height="150" decoding="async" />
+          <span class="author__text"><b>MrHydeDev</b> <i>mrhyde.dev</i></span>
+        </a>
+        <div class="seance__text">
+          <p id="asked" class="waiting">Jev awaits your question…</p>
+          <!-- The letter-by-letter spelling is visual only; the whole answer is announced once in #announcer -->
+          <p id="answer" aria-hidden="true"></p>
+          <p id="announcer" class="visually-hidden" aria-live="polite"></p>
+        </div>
+      </section>
+      <form id="ask" autocomplete="off">
+        <label class="visually-hidden" for="question">Your question</label>
+        <input id="question" type="text" maxlength="300" placeholder="Ask Jev…" autofocus />
+        <button id="send" type="submit">SUMMON</button>
+      </form>
+      <p id="status" role="status"></p>
+      <noscript>
+        <p class="noscript" lang="en">The Ouija board needs JavaScript to summon Jev.</p>
+        <p class="noscript" lang="es">La ouija necesita JavaScript para invocar a Jev.</p>
+      </noscript>
+    </main>
+  </body>
+</html>

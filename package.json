@@ -1,0 +1,48 @@
+{
+  "name": "ouijev",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A pixel-art Ouija board possessed by Jev, an AI model that can't write.",
+  "keywords": [
+    "ouija",
+    "pixel-art",
+    "canvas",
+    "typesafe",
+    "jev",
+    "llm",
+    "experiment"
+  ],
+  "homepage": "https://github.com/MrHydeDev/ouijev#readme",
+  "bugs": "https://github.com/MrHydeDev/ouijev/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrHydeDev/ouijev.git"
+  },
+  "license": "MIT",
+  "author": "MrHydeDev (https://mrhyde.dev)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "node --watch-path=src --watch-path=data src/main.js",
+    "test": "node --test --test-timeout=10000 \"test/**/*.test.js\"",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format:check && npm test",
+    "build:words": "node scripts/build-wordlist.js",
+    "eval": "node scripts/eval.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9"
+  }
+}

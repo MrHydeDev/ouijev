@@ -1,0 +1,17 @@
+node_modules/
+*.log
+
+# FrequencyWords lists for rebuilding the word lists (see data/README.md)
+*_50k.txt
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets: only the template is versioned
+.env
+.env.*
+!.env.example
+
+.DS_Store
+Thumbs.db

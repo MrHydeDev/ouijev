@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="753" height="224" viewBox="0 0 753 224" role="img" aria-label="OUIJEV. hyde@sunnydale:~$ ./ouijev &quot;is anyone there?&quot; and the spirit answers YES">
+<style>
+  text { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 14px; fill: #ffcf7a; }
+  .title { fill: #5d6679; font-size: 11px; }
+  .prompt { fill: #b98f4f; font-size: 13px; }
+  .command { fill: #efe6d2; font-size: 13px; }
+  .answer { fill: #9dffce; font-size: 15px; font-weight: bold; }
+  .l { animation: wave 2.6s ease-in-out infinite; }
+  .typed { animation: type 10s infinite; }
+  .spelled { animation: spelled 10s infinite; }
+  .aura { animation: aura 10s ease-in-out infinite; }
+  .cursor { animation: blink 1s steps(1) infinite; }
+  .at30 { animation: at30 10s infinite; }
+  .at36 { animation: at36 10s infinite; }
+  .at42 { animation: at42 10s infinite; }
+  .at48 { animation: at48 10s infinite; }
+  @keyframes wave { 0%, 100% { transform: translateY(3.08px); } 50% { transform: translateY(-3.22px); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  /* The question is typed a character at a time, and everything goes quiet before the next round */
+  @keyframes type {
+    0%, 6% { clip-path: inset(0 100% 0 0); animation-timing-function: steps(27, end); }
+    24%, 92% { clip-path: inset(0 0 0 0); opacity: 1; }
+    100% { clip-path: inset(0 0 0 0); opacity: 0; }
+  }
+  @keyframes spelled { 0%, 29% { opacity: 0; } 30%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes aura { 0%, 28% { opacity: 0; } 40%, 86% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes at30 { 0%, 29.5% { opacity: 0; } 30%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes at36 { 0%, 35.5% { opacity: 0; } 36%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes at42 { 0%, 41.5% { opacity: 0; } 42%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes at48 { 0%, 47.5% { opacity: 0; } 48%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .l, .typed, .spelled, .aura, .cursor, .at30, .at36, .at42, .at48 { animation: none; }
+  }
+</style>
+<defs>
+  <filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="ghost" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="scan" width="1" height="3" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#000" opacity="0.18"/></pattern>
+  <radialGradient id="vignette" cx="50%" cy="55%" r="75%"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.45"/></radialGradient>
+  <radialGradient id="presence" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3cffaa" stop-opacity="0.22"/><stop offset="100%" stop-color="#3cffaa" stop-opacity="0"/></radialGradient>
+  <clipPath id="window"><rect width="753" height="224" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#window)">
+<rect width="753" height="224" fill="#0a0e17"/>
+<rect width="753" height="28" fill="#121826"/>
+<rect y="27" width="753" height="1" fill="#1f2738"/>
+<circle cx="20" cy="14" r="5" fill="#e0685b" opacity="0.75"/><circle cx="37" cy="14" r="5" fill="#d9b25a" opacity="0.75"/><circle cx="54" cy="14" r="5" fill="#63b37a" opacity="0.75"/>
+<text class="title" x="376.5" y="18" text-anchor="middle">hyde@sunnydale: ~/ouijev</text>
+<ellipse class="aura" cx="376.5" cy="197" rx="190" ry="34" fill="url(#presence)"/>
+<g transform="translate(0 28)"><g filter="url(#glow)"><g class="l" style="animation-delay:-1.98s"><text x="183.30" y="37.22" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ██████╗ </text><text x="183.30" y="53.32" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╔═══██╗</text><text x="183.30" y="69.42" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="183.30" y="85.52" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="183.30" y="101.62" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚██████╔╝</text><text x="183.30" y="117.72" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ╚═════╝ </text></g><g class="l" style="animation-delay:-1.80s"><text x="258.90" y="37.22" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╗   ██╗</text><text x="258.90" y="53.32" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="258.90" y="69.42" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="258.90" y="85.52" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="258.90" y="101.62" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚██████╔╝</text><text x="258.90" y="117.72" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ╚═════╝ </text></g><g class="l" style="animation-delay:-1.62s"><text x="334.50" y="37.22" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╗</text><text x="334.50" y="53.32" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║</text><text x="334.50" y="69.42" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║</text><text x="334.50" y="85.52" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║</text><text x="334.50" y="101.62" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║</text><text x="334.50" y="117.72" textLength="25.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚═╝</text></g><g class="l" style="animation-delay:-1.44s"><text x="359.70" y="37.22" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     ██╗</text><text x="359.70" y="53.32" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     ██║</text><text x="359.70" y="69.42" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">     ██║</text><text x="359.70" y="85.52" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██   ██║</text><text x="359.70" y="101.62" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚█████╔╝</text><text x="359.70" y="117.72" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ╚════╝ </text></g><g class="l" style="animation-delay:-1.26s"><text x="426.90" y="37.22" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">███████╗</text><text x="426.90" y="53.32" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╔════╝</text><text x="426.90" y="69.42" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">█████╗  </text><text x="426.90" y="85.52" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╔══╝  </text><text x="426.90" y="101.62" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">███████╗</text><text x="426.90" y="117.72" textLength="67.20" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚══════╝</text></g><g class="l" style="animation-delay:-1.08s"><text x="494.10" y="37.22" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██╗   ██╗</text><text x="494.10" y="53.32" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="494.10" y="69.42" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██║   ██║</text><text x="494.10" y="85.52" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚██╗ ██╔╝</text><text x="494.10" y="101.62" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ╚████╔╝ </text><text x="494.10" y="117.72" textLength="75.60" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  ╚═══╝  </text></g></g></g>
+<text class="prompt" x="201.0" y="178" textLength="132.6" lengthAdjust="spacingAndGlyphs">hyde@sunnydale:~$</text>
+<text class="command typed" x="341.4" y="178" textLength="210.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">./ouijev &quot;is anyone there?&quot;</text>
+<g class="spelled" filter="url(#ghost)">
+  <text class="answer at30" x="318.5" y="202" text-anchor="middle">☾</text>
+  <text class="answer at36" x="346.5" y="202" text-anchor="middle">Y</text>
+  <text class="answer at42" x="361.5" y="202" text-anchor="middle">·</text>
+  <text class="answer at42" x="376.5" y="202" text-anchor="middle">E</text>
+  <text class="answer at48" x="391.5" y="202" text-anchor="middle">·</text>
+  <text class="answer at48" x="406.5" y="202" text-anchor="middle">S</text>
+  <text class="answer cursor" x="428.5" y="202" text-anchor="middle">▌</text>
+</g>
+<rect width="753" height="224" fill="url(#scan)"/>
+<rect width="753" height="224" fill="url(#vignette)"/>
+</g>
+<rect x="0.5" y="0.5" width="752" height="223" rx="10" fill="none" stroke="#1f2738"/>
+</svg>

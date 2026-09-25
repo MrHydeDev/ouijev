@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* The plates' and the controls' palette */
+  --plate: #0a0608;
+  --plate-edge: #5a4326;
+  --parchment: #f1e7cf;
+  --faded: #8a7c66;
+  --brass: #ecc868;
+  --ink: #1e0e05;
+  --spirit: #9dffce;
+  /* The same system serif js/font.js rasterizes the board's letters with */
+  --serif: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  /* The language switch's corner: js/fit.js measures where it ends up, so the scene stays clear of it */
+  --corner-gap: 8px;
+  --switch-height: 32px;
+}
+
+body {
+  margin: 0;
+  /* The visible height, which js/fit.js fits the scene into: on mobile, vh is the height with the
+     toolbars hidden, so the page would scroll */
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #0b0c0f;
+  color: var(--spirit);
+  font-family: var(--serif);
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Full-screen fog behind everything; js/fog.js sets its size */
+#fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* js/fit.js sets the width from the pixel size it picks (an integer one unless that wastes too
+   much screen) and publishes it in --px: the CSS size of one board pixel. This width only holds until then. */
+main {
+  --px: 2px;
+  /* The plate's layout follows the board's width (see @container below) */
+  container-type: inline-size;
+  position: relative;
+  z-index: 1;
+  width: min(96vw, calc(460 * var(--px)));
+  padding: 4px 0;
+}
+
+#board {
+  width: 100%;
+}
+
+/* The dark plates with a brown edge: the seance's and the language switch's */
+#seance,
+#language {
+  border: 2px solid var(--plate-edge);
+  background: var(--plate);
+  box-shadow:
+    0 0 0 2px var(--plate),
+    0 4px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* The question asked and the answer the spirit spells out, on an opaque plate:
+   bare text is unreadable over the moving fog. The signature goes on the left and an empty
+   column of the same width on the right keeps the text centered on the plate. */
+#seance {
+  --side: 9.5rem;
+  display: grid;
+  grid-template-columns: var(--side) minmax(0, 1fr) var(--side);
+  align-items: center;
+  column-gap: 12px;
+  margin: 6px 0;
+  padding: 6px 12px 4px;
+}
+
+.seance__text {
+  grid-column: 2;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Author signature: the same as in the other mrhyde.dev projects, in the plate's colors */
+.author {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-self: start;
+  font-size: 14px;
+  color: var(--faded);
+  text-decoration: none;
+}
+
+.author:hover,
+.author:focus-visible {
+  color: var(--parchment);
+}
+
+.author:focus-visible {
+  outline: 1px solid var(--brass);
+  outline-offset: 3px;
+}
+
+.author__photo {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border: 1px solid var(--plate-edge);
+  border-radius: 3px;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.25s;
+}
+
+.author:hover .author__photo,
+.author:focus-visible .author__photo {
+  filter: none;
+}
+
+.author__text {
+  display: grid;
+  line-height: 1.35;
+}
+
+.author__text b {
+  font-weight: 600;
+  color: var(--parchment);
+}
+
+.author__text i {
+  font-style: normal;
+  font-size: 0.9em;
+}
+
+/* On a narrow board the signature shrinks to the photo and the text uses the full width. It's the board's
+   width that counts, not the window's: js/fit.js also narrows the board in short, wide windows. */
+@container (max-width: 640px) {
+  #seance {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .author__text {
+    display: none;
+  }
+}
+
+/* The plate's text scales with the board, down to a legible minimum */
+#asked {
+  min-height: 1.4em;
+  margin: 0;
+  overflow: hidden;
+  font-size: clamp(13px, calc(var(--px) * 8), 18px);
+  font-style: italic;
+  color: var(--parchment);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#asked.waiting {
+  color: var(--faded);
+}
+
+#answer {
+  min-height: 1.25em;
+  margin: 2px 0 0;
+  font-size: clamp(16px, calc(var(--px) * 14), 34px);
+  font-weight: bold;
+  line-height: 1.25;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  /* A long answer on a narrow screen wraps instead of overflowing the plate */
+  overflow-wrap: anywhere;
+  color: var(--spirit);
+  text-shadow:
+    0 0 8px rgba(157, 255, 206, 0.7),
+    0 0 24px rgba(60, 255, 170, 0.4);
+}
+
+/* Blinking cursor while Jev answers (#answer is aria-hidden, so it isn't read aloud) */
+#answer.asking::after {
+  content: "_";
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* The input and button are wooden pieces painted by js/controls.js (same grain and bevel as the board) */
+form {
+  display: flex;
+}
+
+input,
+button {
+  flex: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none center / 100% 100% no-repeat;
+  image-rendering: pixelated;
+  outline: none;
+}
+
+input {
+  padding: 0 calc(var(--px) * 8);
+  font: bold 18px var(--serif);
+  color: var(--ink);
+  text-shadow: var(--px) var(--px) 0 rgba(236, 200, 132, 0.55);
+  caret-color: var(--ink);
+}
+
+/* About 4.8:1 against the wood's average tone, above the 4.5:1 of WCAG AA */
+input::placeholder {
+  color: #2a1606;
+  font-style: italic;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+input:focus,
+button:focus-visible {
+  outline: var(--px) solid var(--brass);
+  outline-offset: calc(var(--px) * -1);
+}
+
+/* The button label is pixel-painted into the texture */
+button {
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
+button:hover:not([aria-disabled="true"]) {
+  filter: brightness(1.25);
+}
+
+button:active:not([aria-disabled="true"]) {
+  transform: translateY(var(--px));
+}
+
+/* While Jev is answering: the form is dimmed, but without `disabled` so focus isn't lost */
+form.busy :is(input, button) {
+  filter: grayscale(0.6) brightness(0.7);
+  cursor: wait;
+}
+
+/* The language switch sits in the top right corner, over the fog and out of the page's flow, so the board keeps
+   all its room. A dark plate like #seance, but a pill. */
+#language {
+  position: fixed;
+  top: var(--corner-gap);
+  right: var(--corner-gap);
+  z-index: 3;
+  display: flex;
+  height: var(--switch-height);
+  padding: 2px;
+  border-radius: 999px;
+}
+
+/* The links fill the switch's height */
+#language a {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  /* Balances the spacing after the last letter, so the code stays centered */
+  text-indent: 0.12em;
+  color: var(--faded);
+  text-decoration: none;
+}
+
+#language a:hover,
+#language a:focus-visible {
+  color: var(--parchment);
+}
+
+#language a:focus-visible {
+  outline: 1px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* After :hover, so the active language keeps its dark text on the brass */
+#language a[aria-current="page"] {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+/* Big enough to tap */
+@media (pointer: coarse) {
+  :root {
+    --switch-height: 48px;
+  }
+
+  #language a {
+    min-width: 48px;
+  }
+}
+
+/* Notices (demo mode, errors) float at the top, over the strip of fog above the board, so they take
+   no space and shift nothing when they appear. When present they get a backdrop to stay readable on the fog. */
+#status {
+  position: fixed;
+  top: var(--corner-gap);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 2 * var(--corner-gap));
+  margin: 0;
+  padding: 2px 10px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+  color: #d5d8dc;
+  text-align: center;
+}
+
+#status:not(:empty) {
+  border-color: #3a2a18;
+  background: rgba(10, 6, 8, 0.92);
+}
+
+#status.error {
+  color: #ff8a7f;
+}
+
+/* On a narrow screen a notice would reach the corner: it goes just below the language switch instead */
+@media (max-width: 720px) {
+  #status {
+    top: calc(var(--switch-height) + 2 * var(--corner-gap));
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.noscript {
+  color: var(--parchment);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #answer.asking::after {
+    animation: none;
+  }
+
+  .author__photo {
+    transition: none;
+  }
+}
